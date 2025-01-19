@@ -7,36 +7,143 @@
   </head>
   <body>
     <h1>Fundamentos Javascrpt</h1>
+    <ul>
+      <li>Primavera</li>
+      <li>Verano</li>
+      <li>Otoño</li>
+      <li>Invierno</li>
+    </ul>
     <script>
-      var hola = "Hola mundo";
-      let hello = "hello world";
-      console.log(hola);
-      console.log(hello);
-      console.log(window);
-      console.log(window.hola);
-      console.log(window.hello);
-      if (true) {
-      }
-      // Ambito de bloque
-      // Esto es un bloque - comentario de una linea
-      console.log("*********var*********");
-      var musica = "Rock";
-      console.log("Variable Musica antes del bloque", musica);
+      // var hola = "Hola mundo";
+      // let hello = "hello world";
+      // console.log(hola);
+      // console.log(hello);
+      // console.log(window);
+      // console.log(window.hola);
+      // console.log(window.hello);
+      // if (true) {
+      // }
+      // // Ambito de bloque
+      // // Esto es un bloque - comentario de una linea
+      // console.log("*********var*********");
+      // var musica = "Rock";
+      // console.log("Variable Musica antes del bloque", musica);
 
-      {
-        var musica = "pop";
-        console.log("Variable Musica dentro del bloque", musica);
-      }
-      console.log("Variable Musica despues del bloque", musica);
-      console.log("*********let*********");
-      let musica2 = "Rock";
-      console.log("Variable Musica antes del bloque", musica2);
+      // // {
+      // //   var musica = "pop";
+      // //   console.log("Variable Musica dentro del bloque", musica);
+      // // }
+      // // console.log("Variable Musica despues del bloque", musica);
+      // // console.log("*********let*********");
+      // // let musica2 = "Rock";
+      // // console.log("Variable Musica antes del bloque", musica2);
 
-      {
-        let musica2 = "pop";
-        console.log("Variable Musica dentro del bloque", musica2);
-      }
-      console.log("Variable Musica despues del bloque", musica2);
+      // // {
+      // //   let musica2 = "pop";
+      // //   console.log("Variable Musica dentro del bloque", musica2);
+      // // }
+      // // console.log("Variable Musica despues del bloque", musica2);
+      // const PI = 3.1416;
+      // console.log(PI);
+      // // Usaremos const cuando nuestra variable no vaya a cambiar el valor durante el flujo de nuestra aplicacion
+      // // No puedes tener constantes vacias con var y con let si dejaria
+      // // const NUEVE;
+      // let a;
+      // console.log(a);
+      // a = "Kenai";
+      // console.log(a);
+      // // PI = 3.15;
+      // //
+      // const objeto = {
+      //   nombre: "jon",
+      //   edad: 35,
+      // };
+      // const colores = ["blanco", "negro", "azul"];
+      // console.log(objeto);
+      // console.log(colores);
+      // objeto.correo = "jonmmircha@gmail.com";
+      // colores.push("anaranjado");
+      // console.log(objeto);
+      // console.log(colores);
+      // // Con valores compuestos como objetos o arrays como tal no entramos al valor directamente sino a una referencia de este objeto es decir sigue siendo un objeto o los arreglos, en primitivos no vas a poder cambiarlos con const sin embargo con objetos y arrays si que vas a poder modificarlo
+      // // Si a lo largo del tiempo de la ejecucion de tu aplicacion se va a modificar el tipo de valor usa let sino , puedes usar const
+
+      // // Cadenas de Texto aka Strings
+      // let nombre = "Jon";
+      // let apellido = "MirCha",
+      //   Saludo = new String("Hola mundo"),
+      //   lorem =
+      //     "      No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor           ";
+      // console.log(nombre, apellido, Saludo);
+      // console.log(
+      //   nombre.length,
+      //   apellido.length,
+      //   Saludo.length,
+      //   nombre.toUpperCase(),
+      //   apellido.toLowerCase(),
+      //   lorem.includes("hay"),
+      //   lorem.includes("casa"),
+      //   // Con el metodo trim sirve para quitar los espacios inecesarios al principio y al final
+      //   lorem,
+      //   lorem.trim(),
+      //   // Con el metodo split separa en un array la cadena de texto y la norma la dicta separador que le pongamos dentro y crea un elemento entre cada separador de estos, sin incluir dicho separador cuando muestra los elementos en el array del console.log
+      //   lorem.split(" "),
+      //   lorem.split(",")
+      //   // Propiedades->Son caracteristicas y atributos
+      //   // metodos-> Acciones o funciiones que nos vana a permitir ejecutar algo
+      // );
+
+      let nombre = "Jon",
+        apellido = "Mircha",
+        // Concatenacion
+        saludo = "Hola mi nombre es " + nombre + " " + apellido;
+      console.log(saludo);
+      // Interpolacion de variables-> que significa? meter dentro de una cadenta de texto el valor dinamicamente de una variable
+      // Template String
+      let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
+      console.log(saludo2);
+      let ul =
+        "    <ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>";
+      console.log(ul);
+      // las `` si nos permite hacerlo de la manera de abajo respetandote las cosas y los espacios, con las "" no dejaria al igual que pasa con ${}
+      let ul2 = `
+      <ul>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+      </ul>
+      `;
+      console.log(ul2);
+      let ul3 = " <ul>";
+      ul3 += " <li> Primavera</li>";
+      ul3 += " <li>Verano</li>";
+      ul3 += " <li>Otoño</li>";
+      ul3 += " <li>Invierno</li>";
+      ul3 += " </ul>";
+      console.log(ul3);
+
+      // numeros->numbers
+      let a = 2,
+        b = new Number(1),
+        c = 7.19;
+      let d = "5.6";
+      console.log(a, b);
+      // El metodo toFixed() sirve para decirle el numero de decimales maximos que quieres que te muestre el numero decimal
+      console.log(c.toFixed(0));
+      console.log(c.toFixed(5));
+      // Con ParseInt conun numero te devuelve la parte entera
+      console.log(parseInt(c));
+      // Con parseFloat te devuelve todo el valor del numero incluyendo decimales
+      console.log(parseFloat(c));
+      console.log(typeof c, typeof d);
+      console.log(a + b);
+      console.log(c + d);
+      // Para pasar de un  valor cadena de texto a valor numeico se puede hacer con parseInt, pero solo sumara el numero entero
+      console.log(c + parseInt(d));
+      console.log(c + parseFloat(d));
+      console.log(c + Number.parseInt(d));
+      console.log(c + Number.parseFloat(d));
     </script>
   </body>
 </html>
