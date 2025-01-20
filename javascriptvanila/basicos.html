@@ -93,57 +93,84 @@
       //   // metodos-> Acciones o funciiones que nos vana a permitir ejecutar algo
       // );
 
-      let nombre = "Jon",
-        apellido = "Mircha",
-        // Concatenacion
-        saludo = "Hola mi nombre es " + nombre + " " + apellido;
-      console.log(saludo);
-      // Interpolacion de variables-> que significa? meter dentro de una cadenta de texto el valor dinamicamente de una variable
-      // Template String
-      let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
-      console.log(saludo2);
-      let ul =
-        "    <ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>";
-      console.log(ul);
-      // las `` si nos permite hacerlo de la manera de abajo respetandote las cosas y los espacios, con las "" no dejaria al igual que pasa con ${}
-      let ul2 = `
-      <ul>
-        <li>Primavera</li>
-        <li>Verano</li>
-        <li>Otoño</li>
-        <li>Invierno</li>
-      </ul>
-      `;
-      console.log(ul2);
-      let ul3 = " <ul>";
-      ul3 += " <li> Primavera</li>";
-      ul3 += " <li>Verano</li>";
-      ul3 += " <li>Otoño</li>";
-      ul3 += " <li>Invierno</li>";
-      ul3 += " </ul>";
-      console.log(ul3);
+      // let nombre = "Jon",
+      //   apellido = "Mircha",
+      //   // Concatenacion
+      //   saludo = "Hola mi nombre es " + nombre + " " + apellido;
+      // console.log(saludo);
+      // // Interpolacion de variables-> que significa? meter dentro de una cadenta de texto el valor dinamicamente de una variable
+      // // Template String
+      // let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
+      // console.log(saludo2);
+      // let ul =
+      //   "    <ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>";
+      // console.log(ul);
+      // // las `` si nos permite hacerlo de la manera de abajo respetandote las cosas y los espacios, con las "" no dejaria al igual que pasa con ${}
+      // let ul2 = `
+      // <ul>
+      //   <li>Primavera</li>
+      //   <li>Verano</li>
+      //   <li>Otoño</li>
+      //   <li>Invierno</li>
+      // </ul>
+      // `;
+      // console.log(ul2);
+      // let ul3 = " <ul>";
+      // ul3 += " <li> Primavera</li>";
+      // ul3 += " <li>Verano</li>";
+      // ul3 += " <li>Otoño</li>";
+      // ul3 += " <li>Invierno</li>";
+      // ul3 += " </ul>";
+      // console.log(ul3);
 
-      // numeros->numbers
-      let a = 2,
-        b = new Number(1),
-        c = 7.19;
-      let d = "5.6";
-      console.log(a, b);
-      // El metodo toFixed() sirve para decirle el numero de decimales maximos que quieres que te muestre el numero decimal
-      console.log(c.toFixed(0));
-      console.log(c.toFixed(5));
-      // Con ParseInt conun numero te devuelve la parte entera
-      console.log(parseInt(c));
-      // Con parseFloat te devuelve todo el valor del numero incluyendo decimales
-      console.log(parseFloat(c));
-      console.log(typeof c, typeof d);
-      console.log(a + b);
-      console.log(c + d);
-      // Para pasar de un  valor cadena de texto a valor numeico se puede hacer con parseInt, pero solo sumara el numero entero
-      console.log(c + parseInt(d));
-      console.log(c + parseFloat(d));
-      console.log(c + Number.parseInt(d));
-      console.log(c + Number.parseFloat(d));
+      // // numeros->numbers
+      // let a = 2,
+      //   b = new Number(1),
+      //   c = 7.19;
+      // let d = "5.6";
+      // console.log(a, b);
+      // // El metodo toFixed() sirve para decirle el numero de decimales maximos que quieres que te muestre el numero decimal
+      // console.log(c.toFixed(0));
+      // console.log(c.toFixed(5));
+      // // Con ParseInt conun numero te devuelve la parte entera
+      // console.log(parseInt(c));
+      // // Con parseFloat te devuelve todo el valor del numero incluyendo decimales
+      // console.log(parseFloat(c));
+      // console.log(typeof c, typeof d);
+      // console.log(a + b);
+      // console.log(c + d);
+      // // Para pasar de un  valor cadena de texto a valor numeico se puede hacer con parseInt, pero solo sumara el numero entero
+      // console.log(c + parseInt(d));
+      // console.log(c + parseFloat(d));
+      // console.log(c + Number.parseInt(d));
+      // console.log(c + Number.parseFloat(d));
+      // let verdadero = true,
+      //   falso = false,
+      //   v = Boolean(true),
+      //   f = Boolean(false);
+      // console.log(verdadero, falso, v, f);
+      // console.log(typeof verdadero, typeof falso);
+      // // El valor 0 dentro de los Booleanos es false
+      // console.log(Boolean(0));
+      // // El valor 0 dentro de los Booleanos es false
+      // // Cadena de texto vacia tiende a false
+      // console.log(Boolean(""));
+      // // Sin embargo en cuanto tenga cualquier caracter espacio etc tiende a true aunque esta cadena de texto sea 0
+      // console.log(Boolean("0"));
+      // //  En esta pagina podemos ver los valores que tienden a verdadero o falso respecto a Boolean -> https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+      // // Para falso-> https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+
+      // Tanto null como undefind vana indicicar un valor ausente algo que no tiene valor, pero la gran diferencia es que algo que no esta inicializa es decir que no se le ha asignado ningun valor a la hora que se creo
+      let indefinida;
+      console.log(indefinida);
+      // Null es un valor puesto intencionalmente por el programador sin embargo undefined es aplicado por JavaScript cuando no se ha definido dicha variable cuando se crea
+      let nulo = null;
+      // Undefined indica que no se ha inicializado una variable y que el valor esta ausente
+      // null es un valor especial que indica la ausencia de un valor
+
+      // NaN - Not a Number
+      let noEsUnNumero = "hola" * 3.7;
+      console.log(noEsUnNumero);
     </script>
   </body>
 </html>
