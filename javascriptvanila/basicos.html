@@ -352,16 +352,107 @@
       // ++i;
       // --i;
       // Lógicos
-      /* 
+      /*
       !not: nie, es ddecir lo que es verdadero lo vuelve falso y viceversaga
       || Or -> Cuando tengo 2 o msa condiciones, con que una se cumpla , es decir sea verdadera, el OR validará
       && And -> Cuando tengo 2 o mas condiciones , todas tienen que cumplirse es decir que todas sean verdaderas para que AND se valida es decir sea true
       */
-      console.log(!true);
-      console.log(!false);
-      console.log(9 === 9 || "9" === 9);
-      console.log(9 === 9 && "9" === 9);
-      console.log(9 === 9 && "9" === "9");
+      // console.log(!true);
+      // console.log(!false);
+      // console.log(9 === 9 || "9" === 9);
+      // console.log(9 === 9 && "9" === 9);
+      // console.log(9 === 9 && "9" === "9");
+      // if - else
+
+      let edad = 18;
+
+      if (edad > 17) {
+        console.log("Eres mayor de Edad");
+      } else {
+        console.log("Eres menor de Edad");
+      }
+      if (edad >= 18) {
+        console.log("Eres mayor de Edad");
+      } else {
+        console.log("Eres menor de Edad");
+      }
+      if (edad < 18) {
+        console.log("Eres menor de Edad");
+      } else {
+        console.log("Eres mayor de Edad");
+      }
+      // if - else if - else
+      /* Buenos dias 6am - 11am
+      Buenas tardes 12hrs  18hrs
+      Buenas noches 19hrs -23hr
+      Dejame dormir - 0hrs - 5hrs */
+      let hora = 18;
+      if (hora >= 0 && hora <= 5) {
+        console.log("Dejame dormir");
+      } else if (hora >= 6 && hora <= 11) {
+        console.log("Buenos dias");
+      } else if (hora >= 12 && hora <= 18) {
+        console.log("Buenas tardes");
+      } else {
+        console.log("Buenas noches");
+      }
+      if (hora > 0 && hora < 6) {
+        console.log("Dejame dormir");
+      } else if (hora > 5 && hora < 12) {
+        console.log("Buenos dias");
+      } else if (hora > 11 && hora < 19) {
+        console.log("Buenas tardes");
+      } else {
+        console.log("Buenas noches");
+      }
+
+      // Operador Ternario(condicion)?verdadero:falsa-> En un operador ternario solo puedes ejecutar una linea de codigo
+      console.log(" Operador ternario");
+      //  prettier-ignore
+      let eresMayor = edad >= 18
+      ? "eres mayor de Edad"
+      : "Eres menor de edad";
+
+      console.log(eresMayor);
+      // switch - case lo vamos a necesitar para diferentes valores para una misma variable
+      /*
+      Domingo - 0
+      Lunes - 1
+      Martes - 2
+      Miercoles - 3
+      Jueves - 4
+      Viernes - 5
+      Sabado -
+       6 */
+      let dia = 20;
+      switch (dia) {
+        case 0:
+          console.log("Domingo");
+          // Si no ponemos el break en  cada caso seguira pasando al siguiente hasta encontrar un break
+          break;
+        case 1:
+          console.log("Lunes");
+          break;
+        case 2:
+          console.log("Martes");
+          break;
+        case 3:
+          console.log("Miercoles");
+          break;
+        case 4:
+          console.log("Jueves");
+          break;
+        case 5:
+          console.log("viernes");
+          break;
+        case 6:
+          console.log("Sabado");
+          break;
+
+        default:
+          console.log("El dia no existe");
+          break;
+      }
     </script>
   </body>
 </html>
