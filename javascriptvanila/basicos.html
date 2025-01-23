@@ -522,29 +522,45 @@
       //   );
       // }
 
-      const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-      // la palabra break y continue no se puede usar con los metodos de los arreglos como el forEach
-      for (let i = 0; i < numeros.length; i++) {
-        if (i === 5) {
-          // Con el break nos salimos de la estructura en la que estamos
-          break;
-        }
-        console.log(numeros[i]);
-      }
-      for (let i = 0; i < numeros.length; i++) {
-        if (numeros[i] % 2 > 0) {
-          // Con continue simplemente omite, se salta esa iteracion y sigue con la siguiente de nuetra estructura de control y sigue cumpliendo con las demasd iteraciones en este caso del bucle for, no funciona con metodos de los arrays
-          continue;
-        }
-        console.log(numeros[i]);
-      }
-      for (let i = 0; i < numeros.length; i++) {
-        if (numeros[i] % 2 === 0) {
-          // Con el break nos salimos de la estructura en la que estamos
-          continue;
-        }
-        console.log(numeros[i]);
-      }
+      // const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+      // // la palabra break y continue no se puede usar con los metodos de los arreglos como el forEach
+      // for (let i = 0; i < numeros.length; i++) {
+      //   if (i === 5) {
+      //     // Con el break nos salimos de la estructura en la que estamos
+      //     break;
+      //   }
+      //   console.log(numeros[i]);
+      // }
+      // for (let i = 0; i < numeros.length; i++) {
+      //   if (numeros[i] % 2 > 0) {
+      //     // Con continue simplemente omite, se salta esa iteracion y sigue con la siguiente de nuetra estructura de control y sigue cumpliendo con las demasd iteraciones en este caso del bucle for, no funciona con metodos de los arrays
+      //     continue;
+      //   }
+      //   console.log(numeros[i]);
+      // }
+      // for (let i = 0; i < numeros.length; i++) {
+      //   if (numeros[i] % 2 === 0) {
+      //     // Con el break nos salimos de la estructura en la que estamos
+      //     continue;
+      //   }
+      //Sin destructuracion
+      const numeros = [1, 2, 3];
+      let uno = numeros[0],
+        dos = numeros[1],
+        tres = numeros[2];
+      console.log(uno, dos, tres);
+      // Con destructuracion
+      // Con arrays es entre corchetes y con objetos es entre llaves, ojo que igual si hacemos un array de letras de un string tambien seria como un array y habria que usar corchetes
+      const [one, two, three] = numeros;
+      console.log(one, two, three);
+      const persona = {
+        nombre: "Jon",
+        apellido: "Mircha",
+        edad: "35",
+      };
+      //Pera desestructurar el valor que nos da tiene que ser igual dentro de llaves al nombre de la propiedad dentro del objeto esto nos dara sus valores de dichas propiedades si no coincide con su valor no funciona, anuque yo modifique el orden de las variables las busca y les da su valor correspendiente
+      let { nombre, apellido, edad } = persona;
+      console.log(nombre, apellido, edad);
     </script>
   </body>
 </html>
