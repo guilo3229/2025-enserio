@@ -494,32 +494,56 @@
       // //   console.log(caracter);
       // // }
 
-      try {
-        console.log("En el try se agrega el código a evaluar");
-        // No definir una variable lo considera un error y pasaria al catch.
-        noExiste;
-        console.log("Segundo mensaje en el try");
-      } catch (error) {
-        console.log("catch captura cualquier error surgido en el try");
-        console.log(error);
-      } finally {
-        console.log(
-          "El bloque finally se ejecutara siempre al final de un bloque try-catch"
-        );
-      }
-      try {
-        let numero = "y";
-        if (isNaN(numero)) {
-          throw new Error("El caracter introducido no es un numero");
+      // try {
+      //   console.log("En el try se agrega el código a evaluar");
+      //   // No definir una variable lo considera un error y pasaria al catch.
+      //   noExiste;
+      //   console.log("Segundo mensaje en el try");
+      // } catch (error) {
+      //   console.log("catch captura cualquier error surgido en el try");
+      //   console.log(error);
+      // } finally {
+      //   console.log(
+      //     "El bloque finally se ejecutara siempre al final de un bloque try-catch"
+      //   );
+      // }
+      // try {
+      //   let numero = "y";
+      //   if (isNaN(numero)) {
+      //     throw new Error("El caracter introducido no es un numero");
+      //   }
+      //   console.log(numero * numero);
+      // } catch (error) {
+      //   console.log(`Se ptrodujo el siguiente error: ${error}`);
+      // } finally {
+      //   // Por ejemplo el finally se puede usar para el lado del backend por ejemplo cuando se finalice la apertura de un archivo sea error o no cerrar ese archivo
+      //   console.log(
+      //     "El bloque finally se ejecutara siempre al final de un bloque try-catch"
+      //   );
+      // }
+
+      const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+      // la palabra break y continue no se puede usar con los metodos de los arreglos como el forEach
+      for (let i = 0; i < numeros.length; i++) {
+        if (i === 5) {
+          // Con el break nos salimos de la estructura en la que estamos
+          break;
         }
-        console.log(numero * numero);
-      } catch (error) {
-        console.log(`Se ptrodujo el siguiente error: ${error}`);
-      } finally {
-        // Por ejemplo el finally se puede usar para el lado del backend por ejemplo cuando se finalice la apertura de un archivo sea error o no cerrar ese archivo
-        console.log(
-          "El bloque finally se ejecutara siempre al final de un bloque try-catch"
-        );
+        console.log(numeros[i]);
+      }
+      for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 > 0) {
+          // Con continue simplemente omite, se salta esa iteracion y sigue con la siguiente de nuetra estructura de control y sigue cumpliendo con las demasd iteraciones en este caso del bucle for, no funciona con metodos de los arrays
+          continue;
+        }
+        console.log(numeros[i]);
+      }
+      for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+          // Con el break nos salimos de la estructura en la que estamos
+          continue;
+        }
+        console.log(numeros[i]);
       }
     </script>
   </body>
