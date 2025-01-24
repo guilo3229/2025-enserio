@@ -584,20 +584,99 @@
       // };
       // dog.ladrar();
       // El poner ...c es como decir el parametro Rest que significa que puedes meter los paraemtros que quieras, el parametro REST es un array siempre
-      function sumar(a, b, ...c) {
-        let resultado = a + b;
-        console.log(c);
-        c.forEach(function (n) {
-          resultado += n;
-        });
-        return resultado;
+      // function sumar(a, b, ...c) {
+      //   let resultado = a + b;
+      //   console.log(c);
+      //   c.forEach(function (n) {
+      //     resultado += n;
+      //   });
+      //   return resultado;
+      // }
+      // console.log(sumar(1, 2));
+      // const arr1 = [1, 2, 3, 4, 5],
+      //   arr2 = [6, 7, 8, 9, 0];
+      // console.log(arr1, arr2);
+      // const arr3 = [...arr1, ...arr2];
+      // console.log(arr3);
+      // Funcion expresada la ejecucion no puede ser antes de que se declare  dicha funcion
+      const saludar = function () {
+        console.log("hola expresada");
+      };
+      saludar();
+      saludar2();
+      // En las funciones declarada el hoisting manda arriba la funcion justo despues de las const y puede ser ejecutada antes de programarla
+      function saludar2() {
+        console.log("hola declarada");
       }
-      console.log(sumar(1, 2));
-      const arr1 = [1, 2, 3, 4, 5],
-        arr2 = [6, 7, 8, 9, 0];
-      console.log(arr1, arr2);
-      const arr3 = [...arr1, ...arr2];
-      console.log(arr3);
+      // Una arrow function es quitar la palabra funtion en la expresada y entre el parentesis y la llave poner una flechita
+      // Las funciones de flecha tambien son expresadas
+      const saludar3 = () => {
+        console.log("saludo 3");
+      };
+      saludar3();
+      // Si es solo una linea de ejecucion podemos omitir las llaves y dejarla tal que:
+      const saludar4 = () => console.log("saludo 4");
+      saludar4();
+      //Cuando una funcion flecha recibe 1 paremetro no es necesario los parentesis, para mas de 1 parametro si es necesario separados por comas ,
+      //  prettier-ignore
+      const saludar5 = nombre => console.log(`Hola ${nombre}`);
+      saludar5("Irma");
+      // Tambien funciona sin los corchetes aunque dejes las llaves en las funciones expresadas de flecha
+      //  prettier-ignore
+      const saludar6 = nombre => {
+        console.log(`Hola ${nombre}`);
+      };
+      saludar6("pepe");
+
+      const sumar = function (a, b) {
+        return a + b;
+      };
+      console.log(sumar(8, 9));
+      // simplificado:
+      const sumare = (a, b) => a + b;
+      console.log(sumare(3, 5));
+
+      const funcionDeVariasLineas = () => {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+      };
+      funcionDeVariasLineas();
+      const numeros = [1, 2, 3, 4, 5];
+
+      numeros.forEach(function (el, index) {
+        console.log(`Posicion:${index} valor:${el}`);
+      });
+      // Tambien puedo hacerla como una arrow function ya que queda hasta mas expresivo
+      numeros.forEach((el, index) =>
+        console.log(`Posicion:${index} valor:${el}`)
+      );
+      // function Perro() {
+      //   console.log(this);
+      // }
+      // Perro();
+      const perro = {
+        nombre: "Kenai",
+        ladrar: function () {
+          console.log(this);
+        },
+      };
+      const perro2 = {
+        nombre: "Kenai",
+        // Si le pongo el this a una funcion como metodo dentro del objeto me saca al this del objeto window saltandose al objeto y el contexto que esta y heredar el contexto padre donde ha sido declarado, por ejemplo no podria poner this.nombre porque pasaria al contexto dinwo saltandose el objeto
+        ladrar: () => {
+          console.log(this);
+        },
+      };
+      perro2.ladrar();
+      const perro3 = {
+        nombre: "Kenai",
+        // Quitando los  2 puntos y el function es la mejor manera mas simple y no te cargas el contexto con el this de la arrow function
+        ladrar() {
+          console.log(this);
+        },
+      };
+      perro3.ladrar();
     </script>
   </body>
 </html>
