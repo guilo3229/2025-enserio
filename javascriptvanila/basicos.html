@@ -544,11 +544,11 @@
       //     continue;
       //   }
       //Sin destructuracion
-      const numeros = [1, 2, 3];
-      let uno = numeros[0],
-        dos = numeros[1],
-        tres = numeros[2];
-      console.log(uno, dos, tres);
+      // const numeros = [1, 2, 3];
+      // let uno = numeros[0],
+      //   dos = numeros[1],
+      //   tres = numeros[2];
+      // console.log(uno, dos, tres);
       // Con destructuracion
       // Con arrays es entre corchetes y con objetos es entre llaves, ojo que igual si hacemos un array de letras de un string tambien seria como un array y habria que usar corchetes
       // const [one, two, three] = numeros;
@@ -561,28 +561,43 @@
       // //Pera desestructurar el valor que nos da tiene que ser igual dentro de llaves al nombre de la propiedad dentro del objeto esto nos dara sus valores de dichas propiedades si no coincide con su valor no funciona, anuque yo modifique el orden de las variables las busca y les da su valor correspendiente
       // let { nombre, apellido, edad } = persona;
       // console.log(nombre, apellido, edad);
-      let nombre = "Kenai",
-        edad = 7;
-      const perro = {
-        nombre: nombre,
-        edad: edad,
-        ladrar: function () {
-          console.log("guauu guauuu!!!");
-        },
-      };
-      console.log(perro);
-      perro.ladrar();
-      const dog = {
-        // Al poner solamente la propiedad entendera ue  nombre: nombre que tienen el mismo  nombre valga la redundancia
-        nombre,
-        edad,
-        raza: "Callejero",
-        // funcion dentro de objeto que seria un metodo  se simplificaria de esta manera
-        ladrar() {
-          console.log("guauu guauuu!!! guaaau!!");
-        },
-      };
-      dog.ladrar();
+      // let nombre = "Kenai",
+      //   edad = 7;
+      // const perro = {
+      //   nombre: nombre,
+      //   edad: edad,
+      //   ladrar: function () {
+      //     console.log("guauu guauuu!!!");
+      //   },
+      // };
+      // console.log(perro);
+      // perro.ladrar();
+      // const dog = {
+      //   // Al poner solamente la propiedad entendera ue  nombre: nombre que tienen el mismo  nombre valga la redundancia
+      //   nombre,
+      //   edad,
+      //   raza: "Callejero",
+      //   // funcion dentro de objeto que seria un metodo  se simplificaria de esta manera
+      //   ladrar() {
+      //     console.log("guauu guauuu!!! guaaau!!");
+      //   },
+      // };
+      // dog.ladrar();
+      // El poner ...c es como decir el parametro Rest que significa que puedes meter los paraemtros que quieras, el parametro REST es un array siempre
+      function sumar(a, b, ...c) {
+        let resultado = a + b;
+        console.log(c);
+        c.forEach(function (n) {
+          resultado += n;
+        });
+        return resultado;
+      }
+      console.log(sumar(1, 2));
+      const arr1 = [1, 2, 3, 4, 5],
+        arr2 = [6, 7, 8, 9, 0];
+      console.log(arr1, arr2);
+      const arr3 = [...arr1, ...arr2];
+      console.log(arr3);
     </script>
   </body>
 </html>
