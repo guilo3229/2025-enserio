@@ -732,12 +732,33 @@
         console.log(`Hola me llamo: ${this.nombre}`);
       };
       // New nos permitia crear una nueva instancia de un string array , numero desde el punto de vista objeto normalmente pera estas variable no poniamamos new pero para que se pueda crear un nuevo objeto a traves de una funcion constructora lo usaremos
-      const snoopy = new Animal("Snoopy", "Macho"),
+
+      // Herencia prototípica
+      function Perro(nombre, genero, tamanio) {
+        this.super = Animal;
+        this.super(nombre, genero);
+        this.tamanio = tamanio;
+      }
+      // Perro esttá heredando de Animal
+      Perro.prototype = new Animal();
+      Perro.prototype.contructor = Perro;
+
+      // Sobreescritura de métodos del Prototipo padre en el hijo
+      Perro.prototype.sonar = function () {
+        console.log("Soy un perro y mi sonido es ladrido");
+      };
+      Perro.prototype.ladrar = function () {
+        console.log("Guau Guau");
+      };
+      const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
         lolaBunny = new Animal("Lola Bunny", "hembra");
       console.log(snoopy);
       console.log(lolaBunny);
       snoopy.sonar();
       snoopy.saludar();
+      snoopy.saludar();
+      snoopy.ladrar();
+
       lolaBunny.sonar();
       lolaBunny.saludar();
     </script>
