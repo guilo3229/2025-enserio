@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const animal = {
+        nombre: "Snoopy",
+        sonar() {
+          console.log("Hago sonidos porque estoy vivo");
+        },
+      };
+      const animal2 = {
+        nombre: "Lola Bunny",
+        sonar() {
+          console.log("Hago sonidos porque estoy vivo");
+        },
+      };
+
+      console.log(animal);
+      console.log(animal2);
+
+      function Animal(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      // Metodos
+      Animal.prototype.sonar = function () {
+        console.log("Hago sonidos porque estoy vivo");
+      };
+      Animal.prototype.saludar = function () {
+        console.log("GUAGU GUAG!");
+      };
+      const snoopy = new Animal("perro", "macho");
+
+      function Perro(nombre, genero, tamanio) {
+        this.super = Animal;
+        this.super(nombre, genero);
+        this.tamanio = tamanio;
+      }
+      Perro.prototype = new Animal();
+      Perro.prototype.contructor = Perro;
+
+      Perro.prototype.sonar = function () {
+        console.log("Soy un perro y mi sonido es ladrido");
+      };
+      const snoopy2 = new Perro("Snoopy", "perro", "Mediano");
+      Perro.prototype.ladrar = function () {
+        console.log("Guau Guau");
+      };
+      snoopy2.sonar();
+      snoopy2.saludar();
+      console.log(snoopy2);
+    </script>
+  </body>
+</html>

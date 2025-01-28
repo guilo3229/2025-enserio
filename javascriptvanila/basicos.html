@@ -685,82 +685,124 @@
       Atributos - Es una caracterstica o propiedad del objeto(Son variable dentro de un objeto)
       Métodos - Son las acciones que un objeto puede realizar(son las funciones dentro de un objeto)
       */
-      const animal = {
-        nombre: "Snoopy",
-        sonar() {
-          console.log("Hago sonidos porqur stoy vivo");
-        },
-      };
-      const animal2 = {
-        nombre: "Lola Bunny",
-        sonar() {
-          console.log("Hago sonidos porqur stoy vivo");
-        },
-      };
-      console.log(animal);
-      console.log(animal2);
+      // const animal = {
+      //   nombre: "Snoopy",
+      //   sonar() {
+      //     console.log("Hago sonidos porqur stoy vivo");
+      //   },
+      // };
+      // const animal2 = {
+      //   nombre: "Lola Bunny",
+      //   sonar() {
+      //     console.log("Hago sonidos porqur stoy vivo");
+      //   },
+      // };
+      // console.log(animal);
+      // console.log(animal2);
 
-      // Funcion constructora
-      // De la cual vamos a crear un prototipo
-      function Animal(nombre, genero) {
-        // Cuando estemos trabajando con funciones constructoras tanto los atributos como los metodos hay que colgarlos del this:
-        // Los atributos si que deben estar dentro de la funcion constructora pero los metodos habra que pegarlos al prototipo  para que no se dupliquen estos  cada vez que haga una instancia.
+      // // Funcion constructora
+      // // De la cual vamos a crear un prototipo
+      // function Animal(nombre, genero) {
+      //   // Cuando estemos trabajando con funciones constructoras tanto los atributos como los metodos hay que colgarlos del this:
+      //   // Los atributos si que deben estar dentro de la funcion constructora pero los metodos habra que pegarlos al prototipo  para que no se dupliquen estos  cada vez que haga una instancia.
+      //   // Atributos
+      //   this.nombre = nombre;
+      //   this.genero = genero;
+      //   // Metodos
+      //   this.sonar = function () {
+      //     console.log("Hago sonidos porque estoy vivo");
+      //   };
+      //   this.saludar = function () {
+      //     console.log(`Hola me llamo: ${this.nombre}`);
+      //   };
+      // }
+      // // Funciio constructura donde asignamos los metodos a los protootipos no a neustra funcion constructora
+      // function Animal(nombre, genero) {
+      //   // Cuando estemos trabajando con funciones constructoras tanto los atributos como los metodos hay que colgarlos del this:
+      //   // Los atributos si que deben estar dentro de la funcion constructora pero los metodos habra que pegarlos al prototipo  para que no se dupliquen estos  cada vez que haga una instancia.
+      //   // Atributos
+      //   this.nombre = nombre;
+      //   this.genero = genero;
+      // }
+      // // Metodos asignados por fuera al prototipo, con esto encontraremos los metodos en el prototipo no en el constructor, con esto hacemos una mejora en el rendimiento bastante grande
+      // Animal.prototype.sonar = function () {
+      //   console.log("Hago sonidos porque estoy vivo");
+      // };
+      // Animal.prototype.saludar = function () {
+      //   console.log(`Hola me llamo: ${this.nombre}`);
+      // };
+      // // New nos permitia crear una nueva instancia de un string array , numero desde el punto de vista objeto normalmente pera estas variable no poniamamos new pero para que se pueda crear un nuevo objeto a traves de una funcion constructora lo usaremos
+
+      // // Herencia prototípica
+      // function Perro(nombre, genero, tamanio) {
+      //   this.super = Animal;
+      //   this.super(nombre, genero);
+      //   this.tamanio = tamanio;
+      // }
+      // // Perro esttá heredando de Animal
+      // Perro.prototype = new Animal();
+      // Perro.prototype.contructor = Perro;
+
+      // // Sobreescritura de métodos del Prototipo padre en el hijo
+      // Perro.prototype.sonar = function () {
+      //   console.log("Soy un perro y mi sonido es ladrido");
+      // };
+      // Perro.prototype.ladrar = function () {
+      //   console.log("Guau Guau");
+      // };
+      // const snoopy = new Perro("Snoopy", "Perro", "Mediano"),
+      //   lolaBunny = new Animal("Lola Bunny", "hembra");
+      // console.log(snoopy);
+      // console.log(lolaBunny);
+      // snoopy.sonar();
+      // snoopy.saludar();
+      // snoopy.saludar();
+      // snoopy.ladrar();
+
+      // lolaBunny.sonar();
+      // lolaBunny.saludar();
+
+      // Lo haremos con azucar sintactico(clases dentro de javascript que entre vanvalinas lo prototipa etc)
+      class Animal {
+        // Para poder meter parametros  las clases tienen un metodo llamado contructor.
+        // El constructor es un método especial que se ejecuta en el momento de instanciar la clase.
         // Atributos
-        this.nombre = nombre;
-        this.genero = genero;
+        constructor(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
         // Metodos
-        this.sonar = function () {
+        // En este caso no hay que sacarlos para que no se dupliquen y generen carga en la app, JavaScript ya lo hace automaticamente al hacerlo con formato de clase(class)
+        sonar() {
           console.log("Hago sonidos porque estoy vivo");
-        };
-        this.saludar = function () {
-          console.log(`Hola me llamo: ${this.nombre}`);
-        };
+        }
+        saludar() {
+          console.log(`Hola me llamo ${this.nombre}`);
+        }
       }
-      // Funciio constructura donde asignamos los metodos a los protootipos no a neustra funcion constructora
-      function Animal(nombre, genero) {
-        // Cuando estemos trabajando con funciones constructoras tanto los atributos como los metodos hay que colgarlos del this:
-        // Los atributos si que deben estar dentro de la funcion constructora pero los metodos habra que pegarlos al prototipo  para que no se dupliquen estos  cada vez que haga una instancia.
-        // Atributos
-        this.nombre = nombre;
-        this.genero = genero;
+      class Perro extends Animal {
+        constructor(nombre, genero, tamanio) {
+          // En este caso no tiengo que asignarle a una variable el valor de super, sino que es un metodo que llama directamente a la clase padre
+          super(nombre, genero);
+          this.tamanio = tamanio;
+        }
+        // Sobreescritura dentro de la extension (herencia) de la clase, se pone dentro de las llaves class pero fuera del contructor, dentro del constructor solo parametros:
+        sonar() {
+          console.log("Soy un perro y mi sonido es un ladrido");
+        }
+        ladrar() {
+          console.log("GUAGUAU!!");
+        }
       }
-      // Metodos asignados por fuera al prototipo, con esto encontraremos los metodos en el prototipo no en el constructor, con esto hacemos una mejora en el rendimiento bastante grande
-      Animal.prototype.sonar = function () {
-        console.log("Hago sonidos porque estoy vivo");
-      };
-      Animal.prototype.saludar = function () {
-        console.log(`Hola me llamo: ${this.nombre}`);
-      };
-      // New nos permitia crear una nueva instancia de un string array , numero desde el punto de vista objeto normalmente pera estas variable no poniamamos new pero para que se pueda crear un nuevo objeto a traves de una funcion constructora lo usaremos
-
-      // Herencia prototípica
-      function Perro(nombre, genero, tamanio) {
-        this.super = Animal;
-        this.super(nombre, genero);
-        this.tamanio = tamanio;
-      }
-      // Perro esttá heredando de Animal
-      Perro.prototype = new Animal();
-      Perro.prototype.contructor = Perro;
-
-      // Sobreescritura de métodos del Prototipo padre en el hijo
-      Perro.prototype.sonar = function () {
-        console.log("Soy un perro y mi sonido es ladrido");
-      };
-      Perro.prototype.ladrar = function () {
-        console.log("Guau Guau");
-      };
-      const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
-        lolaBunny = new Animal("Lola Bunny", "hembra");
-      console.log(snoopy);
-      console.log(lolaBunny);
-      snoopy.sonar();
-      snoopy.saludar();
-      snoopy.saludar();
-      snoopy.ladrar();
-
-      lolaBunny.sonar();
-      lolaBunny.saludar();
+      const mimi = new Animal("mimi", "hembra"),
+        scooby = new Perro("Scoob", "Macho", "gigante");
+      console.log(mimi);
+      mimi.saludar();
+      mimi.sonar();
+      console.log(scooby);
+      scooby.saludar();
+      scooby.sonar();
+      scooby.ladrar();
     </script>
   </body>
 </html>
