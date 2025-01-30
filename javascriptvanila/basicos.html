@@ -763,67 +763,152 @@
       // lolaBunny.saludar();
 
       // Lo haremos con azucar sintactico(clases dentro de javascript que entre vanvalinas lo prototipa etc)
-      class Animal {
-        // Para poder meter parametros  las clases tienen un metodo llamado contructor.
-        // El constructor es un método especial que se ejecuta en el momento de instanciar la clase.
-        // Atributos
-        constructor(nombre, genero) {
-          this.nombre = nombre;
-          this.genero = genero;
-        }
-        // Metodos
-        // En este caso no hay que sacarlos para que no se dupliquen y generen carga en la app, JavaScript ya lo hace automaticamente al hacerlo con formato de clase(class)
-        sonar() {
-          console.log("Hago sonidos porque estoy vivo");
-        }
-        saludar() {
-          console.log(`Hola me llamo ${this.nombre}`);
-        }
+      //   class Animal {
+      //     // Para poder meter parametros  las clases tienen un metodo llamado contructor.
+      //     // El constructor es un método especial que se ejecuta en el momento de instanciar la clase.
+      //     // Atributos
+      //     constructor(nombre, genero) {
+      //       this.nombre = nombre;
+      //       this.genero = genero;
+      //     }
+      //     // Metodos
+      //     // En este caso no hay que sacarlos para que no se dupliquen y generen carga en la app, JavaScript ya lo hace automaticamente al hacerlo con formato de clase(class)
+      //     sonar() {
+      //       console.log("Hago sonidos porque estoy vivo");
+      //     }
+      //     saludar() {
+      //       console.log(`Hola me llamo ${this.nombre}`);
+      //     }
+      //   }
+      //   class Perro extends Animal {
+      //     constructor(nombre, genero, tamanio) {
+      //       // En este caso no tiengo que asignarle a una variable el valor de super, sino que es un metodo que llama directamente a la clase padre
+      //       super(nombre, genero);
+      //       this.tamanio = tamanio;
+      //       this.raza = null;
+      //     }
+      //     // Sobreescritura dentro de la extension (herencia) de la clase, se pone dentro de las llaves class pero fuera del contructor, dentro del constructor solo parametros:
+      //     sonar() {
+      //       console.log("Soy un perro y mi sonido es un ladrido");
+      //     }
+      //     ladrar() {
+      //       console.log("GUAGUAU!!");
+      //     }
+      //     // Un método estáticao es el cual se puede ejecutar sin necesidad de instanciar la clase
+      //     static queEres() {
+      //       console.log(
+      //         "Los perros somos animales mamíferos que pertenecemos a la familia de los caninos somos considerados los mejores amigos del hombre"
+      //       );
+      //     }
+      //     // Los setters y getters son métodos especiales que nos permiten estabklecer y obtener los valores de atributos de  nuestr clase
+      //     get getRaza() {
+      //       return this.raza;
+      //     }
+      //     set setRaza(raza) {
+      //       this.raza = raza;
+      //     }
+      //   }
+      //   Perro.queEres();
+      //   const mimi = new Animal("mimi", "hembra"),
+      //     scooby = new Perro("Scoob", "Macho", "gigante");
+      //   console.log(mimi);
+      //   mimi.saludar();
+      //   mimi.sonar();
+      //   console.log(scooby);
+      //   scooby.saludar();
+      //   scooby.sonar();
+      //   scooby.ladrar();
+      //   // getRaza al ser un getter es como si fuera un atributo no un metodo
+      //   console.log(scooby.getRaza);
+      //   // scooby.getRaza();
+      //   // Lo mismo pasa con el setRaza
+      //   scooby.setRaza = "Gran Danes";
+      //   console.log(scooby.getRaza);
+      //
+
+      console.log(console);
+      console.error("Esto es un error");
+      console.warn("Esto es un aviso");
+      console.info("Esto es un mensaje informativo");
+      console.log("Un registro de lo que ha pasado en nuestra aplicación");
+      let nombre = "jon",
+        apellido = "Mircha",
+        edad = 35;
+      console.log(nombre);
+      console.log(apellido);
+      console.log(edad);
+      console.log(nombre, apellido, edad);
+      console.log(
+        `Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`
+      );
+      // Tambien se pueden hacer como sustitucion de comodines %s para string y %d para number
+      console.log(
+        `Hola mi nombre es %s %s y tengo %d años.`,
+        nombre,
+        apellido,
+        edad
+      );
+      // Para limpiar la consola usamos console.clear()
+      console.clear();
+      console.log(window);
+      // El document es la representacion HTML a traves de JavaScript
+      console.log(document);
+      // El document.dir nos muestra todos los atributos,metodos etc que tiene el document
+      console.dir(document);
+      console.log(document.body);
+      console.clear();
+      // Para abrir grupo
+      console.group("Cursos de @jonmircha en youtube");
+      console.log("Curso de Javascript");
+      console.log(" curso de Node.js");
+      console.log("curso de PWAs");
+      console.log("curso de Flexbox");
+      console.log("curso de diseño y programación web");
+      // Para decirle que el grupo ha terminado hay que hacerlo con .groupEnd()
+      console.groupEnd();
+      console.groupCollapsed("Cursos de @jonmircha en youtube");
+      console.log("Curso de Javascript");
+      console.log(" curso de Node.js");
+      console.log("curso de PWAs");
+      console.log("curso de Flexbox");
+      console.log("curso de diseño y programación web");
+      // Para decirle que el grupo ha terminado hay que hacerlo con .groupEnd()
+      console.groupEnd();
+      console.clear();
+      console.table(Object.entries(console).sort());
+
+      const numeros = [1, 2, 3, 4, 5],
+        vocales = ["a", "e", "i", "o", "u"];
+      console.table(numeros);
+      console.table(vocales);
+      const perro = {
+        nombre: "Bunny",
+        raza: "boxer",
+        color: "cafe",
+      };
+      console.table(perro);
+      console.clear;
+      // Para calcular el tiempo que tarda en realizar dicha peticion se puede usar
+      console.time(`Cuanto tiempo tarda mi código inicio`);
+      const arreglo = Array(1000000);
+      for (let i = 0; i < arreglo.length; i++) {
+        arreglo[i] = i;
       }
-      class Perro extends Animal {
-        constructor(nombre, genero, tamanio) {
-          // En este caso no tiengo que asignarle a una variable el valor de super, sino que es un metodo que llama directamente a la clase padre
-          super(nombre, genero);
-          this.tamanio = tamanio;
-          this.raza = null;
-        }
-        // Sobreescritura dentro de la extension (herencia) de la clase, se pone dentro de las llaves class pero fuera del contructor, dentro del constructor solo parametros:
-        sonar() {
-          console.log("Soy un perro y mi sonido es un ladrido");
-        }
-        ladrar() {
-          console.log("GUAGUAU!!");
-        }
-        // Un método estáticao es el cual se puede ejecutar sin necesidad de instanciar la clase
-        static queEres() {
-          console.log(
-            "Los perros somos animales mamíferos que pertenecemos a la familia de los caninos somos considerados los mejores amigos del hombre"
-          );
-        }
-        // Los setters y getters son métodos especiales que nos permiten estabklecer y obtener los valores de atributos de  nuestr clase
-        get getRaza() {
-          return this.raza;
-        }
-        set setRaza(raza) {
-          this.raza = raza;
-        }
-      }
-      Perro.queEres();
-      const mimi = new Animal("mimi", "hembra"),
-        scooby = new Perro("Scoob", "Macho", "gigante");
-      console.log(mimi);
-      mimi.saludar();
-      mimi.sonar();
-      console.log(scooby);
-      scooby.saludar();
-      scooby.sonar();
-      scooby.ladrar();
-      // getRaza al ser un getter es como si fuera un atributo no un metodo
-      console.log(scooby.getRaza);
-      // scooby.getRaza();
-      // Lo mismo pasa con el setRaza
-      scooby.setRaza = "Gran Danes";
-      console.log(scooby.getRaza);
+      // El time y el timeEnd sirven como badnera deben tener el mismo nombre para saber cuando empiezan y cuando termina es decir empieza cuando lega la lectura y termina con el timeEnd cuando este tiene la misma bandera que time y cuanto toca al End calcula cuanto ha tardado desde la lectura del time a la lectura del End
+      console.timeEnd(`Cuanto tiempo tarda mi código inicio`);
+      // console.log(arreglo);
+      console.clear();
+      // Hay veces que tambien nos gustaria saber cuantas veces se ha ejecutado cierto fragmenteo de codigo
+      // for (let i = 0; i < arreglo.length; i++) {
+      //   // console.count("codigo for");
+      //   // console.log(i);
+      // }
+
+      let x = 3,
+        y = 2,
+        PruebaXY = "Se espera que X siempre sea menor que y";
+      // El punto assert fallo cuando la condicion fallo
+      console.assert(x < y, (x, y, PruebaXY));
     </script>
   </body>
 </html>
