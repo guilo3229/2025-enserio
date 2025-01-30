@@ -785,6 +785,7 @@
           // En este caso no tiengo que asignarle a una variable el valor de super, sino que es un metodo que llama directamente a la clase padre
           super(nombre, genero);
           this.tamanio = tamanio;
+          this.raza = null;
         }
         // Sobreescritura dentro de la extension (herencia) de la clase, se pone dentro de las llaves class pero fuera del contructor, dentro del constructor solo parametros:
         sonar() {
@@ -793,7 +794,21 @@
         ladrar() {
           console.log("GUAGUAU!!");
         }
+        // Un método estáticao es el cual se puede ejecutar sin necesidad de instanciar la clase
+        static queEres() {
+          console.log(
+            "Los perros somos animales mamíferos que pertenecemos a la familia de los caninos somos considerados los mejores amigos del hombre"
+          );
+        }
+        // Los setters y getters son métodos especiales que nos permiten estabklecer y obtener los valores de atributos de  nuestr clase
+        get getRaza() {
+          return this.raza;
+        }
+        set setRaza(raza) {
+          this.raza = raza;
+        }
       }
+      Perro.queEres();
       const mimi = new Animal("mimi", "hembra"),
         scooby = new Perro("Scoob", "Macho", "gigante");
       console.log(mimi);
@@ -803,6 +818,12 @@
       scooby.saludar();
       scooby.sonar();
       scooby.ladrar();
+      // getRaza al ser un getter es como si fuera un atributo no un metodo
+      console.log(scooby.getRaza);
+      // scooby.getRaza();
+      // Lo mismo pasa con el setRaza
+      scooby.setRaza = "Gran Danes";
+      console.log(scooby.getRaza);
     </script>
   </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personajes</title>
+  </head>
+  <body>
+    <h1>Personajes clases</h1>
+    <script>
+      class PJ {
+        constructor(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        andar() {
+          console.log("Ando");
+        }
+        correr() {
+          console.log("Corre");
+        }
+
+        Sentarse() {
+          console.log("Se sienta");
+        }
+        saltar() {
+          console.log("Salta");
+        }
+      }
+      const Roberto = new PJ("Roberto", "Hombre");
+      console.log(Roberto);
+      class Humano extends PJ {
+        constructor(nombre, genero, clase) {
+          super(nombre, genero);
+          this.raza = "Humana";
+          this.clase = clase;
+        }
+        Firebolt() {
+          console.log("Lanza bola de fuego");
+        }
+        Frostpunk() {
+          console.log(" lanza de congelacion");
+        }
+        andar() {
+          console.log("Ando pero con clase");
+        }
+      }
+      const Marco = new Humano("Marco", "Hombre", "Mago");
+      console.log(Marco);
+      Marco.andar();
+      class SoulTaker extends Humano {
+        constructor(nombre, genero, clase, Especialidad) {
+          super(nombre, genero, clase);
+          this.Soultaker = "Roba Almas";
+          this.Especialidad = Especialidad;
+        }
+        Inferno() {
+          console.log("Ataque AOE potente");
+        }
+        FinalBlast() {
+          console.log("Ataque final Blast");
+        }
+
+        Firebolt() {
+          console.log("Bola de fuego mejorada");
+        }
+        Frostpunk() {
+          throw new Error("Frostpunk no esta disponible para Soultaker");
+        }
+      }
+
+      const MarcoEvolution = new SoulTaker(
+        "MarcoEvo",
+        "Hombre",
+        "MAgo evolucionado",
+        "Portero del inframundo"
+      );
+      console.log(MarcoEvolution);
+      MarcoEvolution.Firebolt();
+      MarcoEvolution.Frostpunk();
+    </script>
+  </body>
+</html>
