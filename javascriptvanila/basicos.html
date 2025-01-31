@@ -826,89 +826,129 @@
       //   console.log(scooby.getRaza);
       //
 
-      console.log(console);
-      console.error("Esto es un error");
-      console.warn("Esto es un aviso");
-      console.info("Esto es un mensaje informativo");
-      console.log("Un registro de lo que ha pasado en nuestra aplicación");
-      let nombre = "jon",
-        apellido = "Mircha",
-        edad = 35;
-      console.log(nombre);
-      console.log(apellido);
-      console.log(edad);
-      console.log(nombre, apellido, edad);
-      console.log(
-        `Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`
-      );
-      // Tambien se pueden hacer como sustitucion de comodines %s para string y %d para number
-      console.log(
-        `Hola mi nombre es %s %s y tengo %d años.`,
-        nombre,
-        apellido,
-        edad
-      );
-      // Para limpiar la consola usamos console.clear()
-      console.clear();
-      console.log(window);
-      // El document es la representacion HTML a traves de JavaScript
-      console.log(document);
-      // El document.dir nos muestra todos los atributos,metodos etc que tiene el document
-      console.dir(document);
-      console.log(document.body);
-      console.clear();
-      // Para abrir grupo
-      console.group("Cursos de @jonmircha en youtube");
-      console.log("Curso de Javascript");
-      console.log(" curso de Node.js");
-      console.log("curso de PWAs");
-      console.log("curso de Flexbox");
-      console.log("curso de diseño y programación web");
-      // Para decirle que el grupo ha terminado hay que hacerlo con .groupEnd()
-      console.groupEnd();
-      console.groupCollapsed("Cursos de @jonmircha en youtube");
-      console.log("Curso de Javascript");
-      console.log(" curso de Node.js");
-      console.log("curso de PWAs");
-      console.log("curso de Flexbox");
-      console.log("curso de diseño y programación web");
-      // Para decirle que el grupo ha terminado hay que hacerlo con .groupEnd()
-      console.groupEnd();
-      console.clear();
-      console.table(Object.entries(console).sort());
+      // console.log(console);
+      // console.error("Esto es un error");
+      // console.warn("Esto es un aviso");
+      // console.info("Esto es un mensaje informativo");
+      // console.log("Un registro de lo que ha pasado en nuestra aplicación");
+      // let nombre = "jon",
+      //   apellido = "Mircha",
+      //   edad = 35;
+      // console.log(nombre);
+      // console.log(apellido);
+      // console.log(edad);
+      // console.log(nombre, apellido, edad);
+      // console.log(
+      //   `Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`
+      // );
+      // // Tambien se pueden hacer como sustitucion de comodines %s para string y %d para number
+      // console.log(
+      //   `Hola mi nombre es %s %s y tengo %d años.`,
+      //   nombre,
+      //   apellido,
+      //   edad
+      // );
+      // // Para limpiar la consola usamos console.clear()
+      // console.clear();
+      // console.log(window);
+      // // El document es la representacion HTML a traves de JavaScript
+      // console.log(document);
+      // // El document.dir nos muestra todos los atributos,metodos etc que tiene el document
+      // console.dir(document);
+      // console.log(document.body);
+      // console.clear();
+      // // Para abrir grupo
+      // console.group("Cursos de @jonmircha en youtube");
+      // console.log("Curso de Javascript");
+      // console.log(" curso de Node.js");
+      // console.log("curso de PWAs");
+      // console.log("curso de Flexbox");
+      // console.log("curso de diseño y programación web");
+      // // Para decirle que el grupo ha terminado hay que hacerlo con .groupEnd()
+      // console.groupEnd();
+      // console.groupCollapsed("Cursos de @jonmircha en youtube");
+      // console.log("Curso de Javascript");
+      // console.log(" curso de Node.js");
+      // console.log("curso de PWAs");
+      // console.log("curso de Flexbox");
+      // console.log("curso de diseño y programación web");
+      // // Para decirle que el grupo ha terminado hay que hacerlo con .groupEnd()
+      // console.groupEnd();
+      // console.clear();
+      // console.table(Object.entries(console).sort());
 
-      const numeros = [1, 2, 3, 4, 5],
-        vocales = ["a", "e", "i", "o", "u"];
-      console.table(numeros);
-      console.table(vocales);
-      const perro = {
-        nombre: "Bunny",
-        raza: "boxer",
-        color: "cafe",
-      };
-      console.table(perro);
-      console.clear;
-      // Para calcular el tiempo que tarda en realizar dicha peticion se puede usar
-      console.time(`Cuanto tiempo tarda mi código inicio`);
-      const arreglo = Array(1000000);
-      for (let i = 0; i < arreglo.length; i++) {
-        arreglo[i] = i;
-      }
-      // El time y el timeEnd sirven como badnera deben tener el mismo nombre para saber cuando empiezan y cuando termina es decir empieza cuando lega la lectura y termina con el timeEnd cuando este tiene la misma bandera que time y cuanto toca al End calcula cuanto ha tardado desde la lectura del time a la lectura del End
-      console.timeEnd(`Cuanto tiempo tarda mi código inicio`);
-      // console.log(arreglo);
-      console.clear();
-      // Hay veces que tambien nos gustaria saber cuantas veces se ha ejecutado cierto fragmenteo de codigo
+      // const numeros = [1, 2, 3, 4, 5],
+      //   vocales = ["a", "e", "i", "o", "u"];
+      // console.table(numeros);
+      // console.table(vocales);
+      // const perro = {
+      //   nombre: "Bunny",
+      //   raza: "boxer",
+      //   color: "cafe",
+      // };
+      // console.table(perro);
+      // console.clear;
+      // // Para calcular el tiempo que tarda en realizar dicha peticion se puede usar
+      // console.time(`Cuanto tiempo tarda mi código inicio`);
+      // const arreglo = Array(1000000);
       // for (let i = 0; i < arreglo.length; i++) {
-      //   // console.count("codigo for");
-      //   // console.log(i);
+      //   arreglo[i] = i;
       // }
+      // // El time y el timeEnd sirven como badnera deben tener el mismo nombre para saber cuando empiezan y cuando termina es decir empieza cuando lega la lectura y termina con el timeEnd cuando este tiene la misma bandera que time y cuanto toca al End calcula cuanto ha tardado desde la lectura del time a la lectura del End
+      // console.timeEnd(`Cuanto tiempo tarda mi código inicio`);
+      // // console.log(arreglo);
+      // console.clear();
+      // // Hay veces que tambien nos gustaria saber cuantas veces se ha ejecutado cierto fragmenteo de codigo
+      // // for (let i = 0; i < arreglo.length; i++) {
+      // //   // console.count("codigo for");
+      // //   // console.log(i);
+      // // }
 
-      let x = 3,
-        y = 2,
-        PruebaXY = "Se espera que X siempre sea menor que y";
-      // El punto assert fallo cuando la condicion fallo
-      console.assert(x < y, (x, y, PruebaXY));
+      // let x = 3,
+      //   y = 2,
+      //   PruebaXY = "Se espera que X siempre sea menor que y";
+      // // El punto assert fallo cuando la condicion fallo
+      // console.assert(x < y, (x, y, PruebaXY));
+
+      console.log(Date());
+      let fecha = new Date();
+      console.log(fecha);
+      // El getDate obtiene el dia del mes
+      console.log(fecha.getDate());
+      // getDay te da el dia de la semana- D L M Mi J V S -> 0 1 2 3 4 5 6
+      console.log(fecha.getDay());
+      // Para el mes usamos getMoth empezando desde 0->Enero 11 ->Diciembre
+      console.log(fecha.getMonth());
+      // Considera  el numero de años desde 1920 -> 2025-1925 = 125
+      console.log(fecha.getYear());
+      // Para saber el año el cuale stamos sria  con el getFullYear
+      console.log(fecha.getFullYear());
+      // Las horas
+      console.log(fecha.getHours());
+      // Los minutos
+      console.log(fecha.getMinutes());
+      // Los segundos
+      console.log(fecha.getSeconds());
+      // los milisegundos
+      console.log(fecha.getMilliseconds());
+      // Para sacar los datos a cadena de texto podemos pasarlo a toString o posteriormente toDateString
+      console.log(fecha.toString());
+      // Quedaria: Fri Jan 31
+      console.log(fecha.toDateString());
+      // Para la fecha local en string: 31/1/2025 quedaria
+      console.log(fecha.toLocaleString());
+      console.log(fecha.toLocaleDateString());
+      // La hora de modo: 10:55:21;
+      console.log(fecha.toLocaleTimeString());
+      // getTimezoneoffset -> el numero de minutos desde el meridiano que pasa por londre  que serian 0
+      console.log(fecha.getTimezoneOffset());
+      // Con UTC nos dice que fecha es alli y cuanto varian las horas respecto a UTC 0
+      console.log(fecha.getUTCDate());
+      console.log(fecha.getUTCHours());
+      console.log(Date.now());
+      // Se usa con Date no con variables, milisegundos desde el 1 de enero de 1970, usar time Stamp de hoy en milisegundos y restar la fecha de nacimiento y de ahi pasarlos a años meses dias horas minutos y segundos con el odulo por ejemplo
+      let cumpleJon = new Date(1984, 4, 23);
+      console.log(cumpleJon);
     </script>
   </body>
 </html>
