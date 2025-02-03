@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Fundamentos Javascrpt</h1>
+
     <ul>
       <li>Primavera</li>
       <li>Verano</li>
@@ -1001,18 +1002,37 @@
       // console.log({} && "valor de la derecha");
       // Cuando trabajas con react y trabasjas con componentes renderizados de componentes dinamiscos y necesitas meter uno u otro esto sirve bastante bien, se complementan y son inversos
 
-      console.log(window);
-      // window.alert("Esto es una alerta")
-      // window.confirm("Hola esto es ua confirmacion");
-      // window.prompt("Hola estoe s un prompt y le permite al usuario ingresar un valor")
-      let alerta = alert("Esto es una alerta"),
-        confirmacion = confirm("Hola esto es ua confirmacion"),
-        aviso = prompt(
-          "Hola esto es un aviso y le permite al usuario ingresar unv oalor"
-        );
-      console.log(alerta);
-      console.log(confirmacion);
-      console.log(aviso);
+      // console.log(window);
+      // // window.alert("Esto es una alerta")
+      // // window.confirm("Hola esto es ua confirmacion");
+      // // window.prompt("Hola estoe s un prompt y le permite al usuario ingresar un valor")
+      // let alerta = alert("Esto es una alerta"),
+      //   confirmacion = confirm("Hola esto es ua confirmacion"),
+      //   aviso = prompt(
+      //     "Hola esto es un aviso y le permite al usuario ingresar unv oalor"
+      //   );
+      // console.log(alerta);
+      // console.log(confirmacion);
+      // console.log(aviso);
+
+      /* 
+      Expresiones Regulares
+        Son una secuencia de caracteres que forman un patrón de búsqueda, principalmente utilizada para la búsqueda de patrones de cadenas de caracteres.
+
+        https://es.wikipedia.org/wiki/expresi%C3%B3n_regular
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+        
+      */
+      let cadena =
+        " ipsum dolor sit amet consectetur adipisicing elit. Sed maxime, et asperiores voluptatibus facere deserunt! Culpa itaque officia delectus ad atque libero lorem possimus, ut eveniet eligendi! Vero lorem lorem 7 voluptate laudantium sed.";
+      // let expReg = new RegExp("lorem", "ig");
+      // Esta segunda forma de definir las expresiones regulares es mas sencilla
+      let expReg2 = /lorem{2,}/gi;
+      // console.log(expReg.test(cadena));
+      // console.log(expReg.exec(cadena));
+
+      console.log(expReg2.exec(cadena));
+      console.log(expReg2.test(cadena));
     </script>
   </body>
 </html>
