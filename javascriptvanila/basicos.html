@@ -910,45 +910,62 @@
       // // El punto assert fallo cuando la condicion fallo
       // console.assert(x < y, (x, y, PruebaXY));
 
-      console.log(Date());
-      let fecha = new Date();
-      console.log(fecha);
-      // El getDate obtiene el dia del mes
-      console.log(fecha.getDate());
-      // getDay te da el dia de la semana- D L M Mi J V S -> 0 1 2 3 4 5 6
-      console.log(fecha.getDay());
-      // Para el mes usamos getMoth empezando desde 0->Enero 11 ->Diciembre
-      console.log(fecha.getMonth());
-      // Considera  el numero de años desde 1920 -> 2025-1925 = 125
-      console.log(fecha.getYear());
-      // Para saber el año el cuale stamos sria  con el getFullYear
-      console.log(fecha.getFullYear());
-      // Las horas
-      console.log(fecha.getHours());
-      // Los minutos
-      console.log(fecha.getMinutes());
-      // Los segundos
-      console.log(fecha.getSeconds());
-      // los milisegundos
-      console.log(fecha.getMilliseconds());
-      // Para sacar los datos a cadena de texto podemos pasarlo a toString o posteriormente toDateString
-      console.log(fecha.toString());
-      // Quedaria: Fri Jan 31
-      console.log(fecha.toDateString());
-      // Para la fecha local en string: 31/1/2025 quedaria
-      console.log(fecha.toLocaleString());
-      console.log(fecha.toLocaleDateString());
-      // La hora de modo: 10:55:21;
-      console.log(fecha.toLocaleTimeString());
-      // getTimezoneoffset -> el numero de minutos desde el meridiano que pasa por londre  que serian 0
-      console.log(fecha.getTimezoneOffset());
-      // Con UTC nos dice que fecha es alli y cuanto varian las horas respecto a UTC 0
-      console.log(fecha.getUTCDate());
-      console.log(fecha.getUTCHours());
-      console.log(Date.now());
-      // Se usa con Date no con variables, milisegundos desde el 1 de enero de 1970, usar time Stamp de hoy en milisegundos y restar la fecha de nacimiento y de ahi pasarlos a años meses dias horas minutos y segundos con el odulo por ejemplo
-      let cumpleJon = new Date(1984, 4, 23);
-      console.log(cumpleJon);
+      // console.log(Date());
+      // let fecha = new Date();
+      // console.log(fecha);
+      // // El getDate obtiene el dia del mes
+      // console.log(fecha.getDate());
+      // // getDay te da el dia de la semana- D L M Mi J V S -> 0 1 2 3 4 5 6
+      // console.log(fecha.getDay());
+      // // Para el mes usamos getMoth empezando desde 0->Enero 11 ->Diciembre
+      // console.log(fecha.getMonth());
+      // // Considera  el numero de años desde 1920 -> 2025-1925 = 125
+      // console.log(fecha.getYear());
+      // // Para saber el año el cuale stamos sria  con el getFullYear
+      // console.log(fecha.getFullYear());
+      // // Las horas
+      // console.log(fecha.getHours());
+      // // Los minutos
+      // console.log(fecha.getMinutes());
+      // // Los segundos
+      // console.log(fecha.getSeconds());
+      // // los milisegundos
+      // console.log(fecha.getMilliseconds());
+      // // Para sacar los datos a cadena de texto podemos pasarlo a toString o posteriormente toDateString
+      // console.log(fecha.toString());
+      // // Quedaria: Fri Jan 31
+      // console.log(fecha.toDateString());
+      // // Para la fecha local en string: 31/1/2025 quedaria
+      // console.log(fecha.toLocaleString());
+      // console.log(fecha.toLocaleDateString());
+      // // La hora de modo: 10:55:21;
+      // console.log(fecha.toLocaleTimeString());
+      // // getTimezoneoffset -> el numero de minutos desde el meridiano que pasa por londre  que serian 0
+      // console.log(fecha.getTimezoneOffset());
+      // // Con UTC nos dice que fecha es alli y cuanto varian las horas respecto a UTC 0
+      // console.log(fecha.getUTCDate());
+      // console.log(fecha.getUTCHours());
+      // console.log(Date.now());
+      // // Se usa con Date no con variables, milisegundos desde el 1 de enero de 1970, usar time Stamp de hoy en milisegundos y restar la fecha de nacimiento y de ahi pasarlos a años meses dias horas minutos y segundos con el odulo por ejemplo
+      // let cumpleJon = new Date(1984, 4, 23);
+      // console.log(cumpleJon);
+      // Math es un metodo estatico y seinvoca asi:
+      console.log(Math);
+      console.log(Math.PI);
+      // El motodo abs nos da el valor absoluto  de dicho numero
+      console.log(Math.abs(-7.8));
+      // Si  queremos redondear tenemos 3 métodos para eso: ceil-> redondea al numero entero mayor, floor-> redondea al numero entero menor, round-> va a redondear al numero mas cercano pero en x,5 siempre tiende al superior
+      console.log(Math.ceil(7.8));
+      console.log(Math.floor(7.8));
+      console.log(Math.round(7.5));
+      // Raiz cuadrada
+      console.log(Math.sqrt(81));
+      // Para ppotencia , primero el numero el cual es la base y el segundo numero es tras la coma es la potencia
+      console.log(Math.pow(2, 5));
+      // Metodo saber ue sgno es(1 es positivo -1 negativo y 0 es cero)
+      console.log(Math.sign(0));
+      // Da un valor entre 0 y uno
+      console.log(Math.round(Math.random() * 1000));
     </script>
   </body>
 </html>
